@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace com.neptuo.money.Pages
 {
-    public class AboutModel : PageModel
+    public class IndexModel : PageModel
     {
         public void OnGet()
         {
