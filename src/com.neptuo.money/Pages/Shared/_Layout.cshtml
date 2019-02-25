@@ -8,6 +8,7 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.min.css" />
+        <link rel="stylesheet" href="~/css/site-mod.min.css" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -18,39 +19,50 @@
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" asp-page="Index">Money</a>
-            </div>
-            <div id="navbar-main" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a asp-page="About">About</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    @if (ViewData.ContainsKey("Header"))
-    {
-        <div class="header">
             <div class="container">
-                <h2>@ViewData["Header"]</h2>
-                <h4>@ViewData["SubHeader"]</h4>
+                @*<div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" asp-page="Index">Money</a>
+                </div>*@
+                <div class="navbar-left">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a asp-page="Index">Home</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a asp-page="About">About</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+
+
+    <div class="splash">
+        <div class="background"></div>
+        <div class="container head-content">
+            <img src="images/logo.png" />
+            <h1>Money</h1>
+            <h2>Neptuo</h2>
         </div>
-        <div class="header-append"></div>
-    }
+    </div>
+    <div class="container body-content">
+        <div class="center">
+            @RenderBody()
+        </div>
+    </div>
 
     <div class="container body-content">
-        @RenderBody()
+        
         <hr />
         <footer>
             <p>&copy; 2018 - Neptuo</p>
