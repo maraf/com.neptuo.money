@@ -9,9 +9,8 @@ image: Visual Studio 2017
 build:
   verbosity: minimal
 
-after_build:
-- ps: >-
-    Tools\BuildStatic.ps1
+build_script:
+- ps: Tools\BuildStatic.ps1
 
 on_success:
   - git config --global credential.helper store

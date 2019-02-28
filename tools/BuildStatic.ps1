@@ -2,12 +2,16 @@ param([string]$buildFolder)
 
 Push-Location $PSScriptRoot;
 
+$csprojPath = "..\src\com.neptuo.money\com.neptuo.money.csproj";
 $outputPath = "..\output";
-$delay = 3000;
+$delay = 5000;
 
-# Start IIS.
+# Build application.
+dotnet build -c Release $csprojPath;
+
+# Start server.
 Write-Host "Execute dotnet run."
-$server = Start-Process "dotnet" -NoNewWindow -PassThru -ArgumentList "run --project ..\src\com.neptuo.money\com.neptuo.money.csproj"
+Start-Process "dotnet" -NoNewWindow -PassThru -ArgumentList "run --project $($csprojPath)"
 
 Write-Host "Waiting $($delay)."
 Start-Sleep -Milliseconds $delay
@@ -24,6 +28,7 @@ if (!($LastExitCode -eq 0))
 }
 
 # Debug print output.
+
 Write-Host "Content of output:"
 $items = Get-ChildItem -Path $outputPath
 ForEach ($item in $items) 
@@ -34,6 +39,6 @@ ForEach ($item in $items)
 
 # Stop IIS.
 Write-Host "Stopping dotnet process."
-Stop-Process $server
+Stop-Process -Name dotnet
 
 Pop-Location;
