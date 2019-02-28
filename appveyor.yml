@@ -10,7 +10,7 @@ build:
   verbosity: minimal
 
 build_script:
-- ps: Tools\BuildStatic.ps1 - '..\..\output'
+- ps: Tools\BuildStatic.ps1 "..\..\output"
 
 on_success:
   - git config --global credential.helper store
