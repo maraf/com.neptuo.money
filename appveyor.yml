@@ -10,7 +10,7 @@ build:
   verbosity: minimal
 
 build_script:
-- ps: Tools\BuildStatic.ps1
+- ps: Tools\BuildStatic.ps1 - '..\..\output'
 
 on_success:
   - git config --global credential.helper store
@@ -18,14 +18,14 @@ on_success:
   - git config --global user.name Appveyor
   - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
   - git config --global core.autocrlf true
-  - git remote set-url origin https://github.com/neptuo/com.neptuo.git
+  - git remote set-url origin https://github.com/maraf/com.neptuo.money.git
   - git checkout gh-pages
   - git clean -f
   - git rm -rf .
   - xcopy ..\output . /E /R /Y
-  - del packages /S /Q
   - del src /S /Q
-  - echo www.neptuo.com > CNAME
+  - echo $env:cname > CNAME
   - git add -A
   - ps: git commit -a -m "StaticSiteBuild on Appveyor version $($env:APPVEYOR_BUILD_VERSION)"
   - git push
+Kill

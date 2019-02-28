@@ -1,9 +1,13 @@
-param([string]$buildFolder)
+param([string]$outputPath)
 
 Push-Location $PSScriptRoot;
 
+If ($outputPath -eq $null)
+{
+    $outputPath = "..\output";
+}
+
 $csprojPath = "..\src\com.neptuo.money\com.neptuo.money.csproj";
-$outputPath = "..\output";
 $delay = 5000;
 
 # Build application.
