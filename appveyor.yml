@@ -28,4 +28,3 @@ on_success:
   - git add -A
   - ps: git commit -a -m "StaticSiteBuild on Appveyor version $($env:APPVEYOR_BUILD_VERSION)"
   - git push
-Kill
