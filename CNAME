@@ -1,1 +1,1 @@
-$env:cname 
+"$($env:cname)" 
