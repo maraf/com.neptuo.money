@@ -11,7 +11,7 @@ dotnet build -c Release $csprojPath;
 
 # Start server.
 Write-Host "Execute dotnet run."
-Start-Process "dotnet" -NoNewWindow -PassThru -ArgumentList "run --project $($csprojPath)"
+$server = Start-Process "dotnet" -NoNewWindow -PassThru -ArgumentList "run --project $($csprojPath)"
 
 Write-Host "Waiting $($delay)."
 Start-Sleep -Milliseconds $delay
