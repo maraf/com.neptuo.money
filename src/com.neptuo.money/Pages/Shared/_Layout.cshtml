@@ -27,6 +27,11 @@
                             <a asp-page="Index">Home</a>
                         </li>
                     </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a asp-page="PrivacyPolicy">Privacy Policy</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
@@ -48,9 +53,7 @@
         </div>
     </div>
     <div class="container body-content">
-        <div class="center">
-            @RenderBody()
-        </div>
+        @RenderBody()
     </div>
 
     <div class="container body-content">
