@@ -13,3 +13,24 @@
 .navbar-nav > li {
     float: left;
 }
+
+.features {
+
+    p {
+        font-size: 16px;
+    }
+
+    .galery img {
+        float: left;
+        height: 180px;
+        padding: 20px;
+    }
+
+    .galery img:first-child {
+        padding-left: 0;
+    }
+
+    .galery img:last-child {
+        padding-right: 0;
+    }
+}
