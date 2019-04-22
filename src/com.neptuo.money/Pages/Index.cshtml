@@ -1,16 +1,32 @@
 ﻿@page
 
-<h1>Money is a small personal expense manager</h1>
-<p>We have a Microsoft Store version for Windows.</p>
+<div class="home">
+    <div class="app">
+        <h1>Personal Expense Manager</h1>
+        <p>
+            Get over your expenses.<br>
+            Split them into in categories and get quick overview.
+        </p>
+    </div>
 
-<div id="mspb-81aovbrgt3r2" class="9n50xhgw891s"></div>
-<script src="https://storebadge.azureedge.net/src/badge-1.8.1.js"></script>
-<script>
-    mspb({ productId: '9n50xhgw891s', badgeType: 'large' }, function (badge) {
-        document.getElementById('mspb-81aovbrgt3r2').innerHTML = badge;
-    });
-</script>
+    <div class="row">
+        <div class="col-md-6 app">
+            <h2>Universal Windows Application</h2>
 
-<p>Also we have an experimental web-based version.</p>
+            <p>
+                <a class="get-it" target="_blank" href="https://www.microsoft.com/store/apps/9n50xhgw891s?ocid=badge">Get it from Microsoft Store</a>.
+            </p>
 
-<a href="https://app.money.neptuo.com" target="_blank">Neptuo Money</a>
+            <img src="~/images/home/universal.png" />
+        </div>
+        <div class="col-md-6 app">
+            <h2>Experimental Web Application</h2>
+
+            <p>
+                <a class="get-it" target="_blank" href="//app.money.neptuo.com">Open in new browse tab</a>.
+            </p>
+
+            <img src="~/images/home/web.png" />
+        </div>
+    </div>
+</div>
